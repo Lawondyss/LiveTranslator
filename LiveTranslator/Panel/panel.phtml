@@ -17,12 +17,12 @@
 
 #TranslationPanel .nette-inner {
 	max-width: 800px !important;
-	height: {$panel->height|noescape}px;
+	height: {$panel->getHeight()|noescape}px;
 	padding: 1px;
 }
 
 #TranslationPanel-sidebar {
-	width: {$panel->layout == 'vertical' ? '40%' : '30%'|noescape};
+	width: {$panel->getLayout() == 'vertical' ? '40%' : '30%'|noescape};
 	height: 100%;
 	overflow: hidden;
 	float: left;
@@ -30,7 +30,7 @@
 }
 
 #TranslationPanel-strings {
-	height: {$panel->height - 38|noescape}px;
+	height: {$panel->getHeight() - 38|noescape}px;
 	overflow: auto;
 	border: 1px solid #AAA;
 }
@@ -96,7 +96,7 @@
 }
 
 #TranslationPanel-editor {
-	width: {$panel->layout == 'vertical' ? '58%' : '68%'|noescape};
+	width: {$panel->getLayout() == 'vertical' ? '58%' : '68%'|noescape};
 	height: 100%;
 	margin: -1px -1px -1px 0;
 	float: right;
@@ -105,7 +105,7 @@
 
 #TranslationPanel div.TranslationPanel-stringVariant {
 	height: 127px;
-{if $panel->layout == 'horizontal'}
+{if $panel->getLayout() == 'horizontal'}
 	width: 50%;
 	float: left;
 {/if}
@@ -173,7 +173,7 @@ div.TranslationPanel-stringVariant textarea.disabled {
 
 #TranslationPanel-status textarea {
 	background-color: #fff;
-	width: {$panel->layout == 'vertical' ? '340px' : '532px'|noescape};
+	width: {$panel->getLayout() == 'vertical' ? '340px' : '532px'|noescape};
 	height: 40px;
 }
 
